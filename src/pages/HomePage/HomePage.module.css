@@ -1,0 +1,46 @@
+.hero {
+  height: calc(100vh - 68px);
+  background-image: image-set(url(/src/assets/images/hero-img@1x.jpg) 1x, url(/src/assets/images/hero-img@2x.jpg) 2x);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.container {
+  padding-top: 436px;
+  text-align: center;
+}
+
+.title {
+  margin-bottom: 16px;
+  font-weight: 700;
+  font-size: 60px;
+  line-height: 1.2;
+  color: var(--white);
+}
+
+.subtitle {
+  margin-bottom: 40px;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 1.33;
+  color: var(--white);
+}
+
+.catalogLink {
+  display: block;
+  padding: 12px 0;
+  margin: 0 auto;
+  border-radius: 12px;
+  width: 276px;
+  background-color: var(--light-blue);
+  text-align: center;
+  font-weight: 600;
+  color: var(--white);
+  transition: background-color 250ms ease-in-out;
+}
+
+.catalogLink:hover,
+.catalogLink:focus {
+  background-color: var(--dark-blue);
+}

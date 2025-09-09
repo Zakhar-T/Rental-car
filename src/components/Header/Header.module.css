@@ -1,0 +1,27 @@
+.headerContainer {
+  display: flex;
+  justify-content: space-between;
+  background-color: var(--badges);
+}
+
+.logo {
+  padding: 24px 0;
+  font-weight: 700;
+}
+
+.logoPart {
+  color: var(--dark-blue);
+}
+
+.navWrapper {
+  display: flex;
+  gap: 32px;
+}
+
+.navLink {
+  padding: 24px 0;
+}
+
+.activeNavLink {
+  color: var(--dark-blue);
+}
