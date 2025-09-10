@@ -1,0 +1,14 @@
+.btn {
+  margin: 0 auto;
+  padding: 12px 38px;
+  border: 1px solid var(--light-blue);
+  border-radius: 12px;
+  background-color: inherit;
+  font-weight: 600;
+  transition: border-color 250ms ease-in;
+}
+
+.btn:hover,
+.btn:focus {
+  border: 1px solid var(--dark-blue);
+}

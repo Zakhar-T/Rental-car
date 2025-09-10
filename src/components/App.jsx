@@ -3,6 +3,7 @@ import { Route, Routes } from 'react-router-dom';
 
 import Header from './Header/Header.jsx';
 const HomePage = lazy(() => import('../pages/HomePage/HomePage.jsx'));
+const CatalogPage = lazy(() => import('../pages/CatalogPage/CatalogPage.jsx'));
 
 export default function App() {
   return (
@@ -11,7 +12,7 @@ export default function App() {
       <Suspense fallback={null}>
         <Routes>
           <Route path="/" element={<HomePage />} />
-          <Route path="/catalog" element={<div></div>} />
+          <Route path="/catalog" element={<CatalogPage />} />
           <Route path="/catalog/:id" element={<div></div>} />
         </Routes>
       </Suspense>

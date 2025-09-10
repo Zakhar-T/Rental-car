@@ -12,3 +12,8 @@ a {
   text-decoration: none;
   color: inherit;
 }
+
+button {
+  display: block;
+  cursor: pointer;
+}

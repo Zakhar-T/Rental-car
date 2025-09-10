@@ -9,7 +9,7 @@ const buildNavLinkClass = ({ isActive }) => {
 
 export default function Header() {
   return (
-    <header className={clsx('container', styles.headerContainer)}>
+    <header className={styles.headerContainer}>
       <Link to="/" className={styles.logo} aria-label="Go to home">
         Rental<span className={styles.logoPart}>Car</span>
       </Link>
