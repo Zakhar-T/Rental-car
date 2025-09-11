@@ -17,3 +17,9 @@ button {
   display: block;
   cursor: pointer;
 }
+
+ul,
+li {
+  margin: 0;
+  list-style: none;
+}
