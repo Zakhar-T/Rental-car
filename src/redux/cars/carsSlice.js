@@ -1,10 +1,11 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { fetchCars } from './operations';
+import { fetchBrands, fetchCars } from './operations';
 
 const slice = createSlice({
   name: 'cars',
   initialState: {
     items: [],
+    brands: [],
     isLoading: false,
     error: null,
   },
@@ -22,6 +23,9 @@ const slice = createSlice({
       .addCase(fetchCars.rejected, (state, action) => {
         state.isLoading = false;
         state.error = action.payload;
+      })
+      .addCase(fetchBrands.fulfilled, (state, action) => {
+        state.brands = action.payload;
       });
   },
 });

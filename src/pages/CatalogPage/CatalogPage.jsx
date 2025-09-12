@@ -6,6 +6,7 @@ import { selectCars } from '../../redux/cars/selectors';
 import CatalogCard from '../../components/CatalogCard/CatalogCard';
 import Grid from '../../components/Grid/Grid';
 import LoadMoreBtn from '../../components/LoadMoreBtn/LoadMoreBtn';
+import FiltersForm from '../../components/FiltersForm/FiltersForm';
 
 export default function CatalogPage() {
   const dispatch = useDispatch();
@@ -17,12 +18,15 @@ export default function CatalogPage() {
 
   return (
     <main className="container">
-      <Grid>
-        {cars.map((car) => {
-          return <CatalogCard key={car.id} car={car} />;
-        })}
-      </Grid>
-      <LoadMoreBtn />
+      <section className="section">
+        <FiltersForm />
+        <Grid>
+          {cars.map((car) => {
+            return <CatalogCard key={car.id} car={car} />;
+          })}
+        </Grid>
+        <LoadMoreBtn />
+      </section>
     </main>
   );
 }
