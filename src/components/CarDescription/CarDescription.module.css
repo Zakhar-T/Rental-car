@@ -1,0 +1,40 @@
+.container {
+  margin-bottom: 68px;
+}
+
+.titleWrapper {
+  display: flex;
+  gap: 16px;
+  align-items: baseline;
+  margin-bottom: 8px;
+}
+
+.title {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 133%;
+}
+
+.id {
+  color: var(--gray);
+}
+
+.subtitleWrapper {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.addressWrapper {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+}
+
+.price {
+  margin-bottom: 32px;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 133%;
+  color: var(--light-blue);
+}

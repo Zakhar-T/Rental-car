@@ -3,8 +3,8 @@ import styles from './FiltersForm.module.css';
 
 import { Field, Form, Formik } from 'formik';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchBrands } from '../../redux/cars/operations';
-import { selectCarsBrands } from '../../redux/cars/selectors';
+import { fetchBrands } from '../../redux/brands/operations';
+import { selectBrands } from '../../redux/brands/selectors';
 
 const initialValues = {
   brand: '',
@@ -20,7 +20,7 @@ export default function FiltersForm() {
   const mileageFieldId = useId();
 
   const dispatch = useDispatch();
-  const brands = useSelector(selectCarsBrands);
+  const brands = useSelector(selectBrands);
 
   useEffect(() => {
     dispatch(fetchBrands());

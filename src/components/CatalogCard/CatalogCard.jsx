@@ -1,13 +1,17 @@
-import { Link } from 'react-router-dom';
 import styles from './CatalogCard.module.css';
-import { parseAddress } from '../../utils/parseAddress';
+
+import { parseAddress, parseMileage } from '../../utils/parseFunctions';
+
+import { Link } from 'react-router-dom';
+import LikeBtn from '../LikeBtn/LikeBtn';
 
 export default function CatalogCard({ car }) {
-  const { year, brand, model, type, img, description, rentalPrice, rentalCompany, address, mileage } = car;
+  const { id, year, brand, model, type, img, rentalPrice, rentalCompany, address, mileage } = car;
 
   return (
     <li className={styles.card}>
-      <img className={styles.cardImg} src={img} alt={description} />
+      <LikeBtn />
+      <img className={styles.cardImg} src={img} alt={brand} width="276" height="268" />
       <div className={styles.titleWrapper}>
         <h2 className={styles.title}>
           {brand} <span className={styles.titlePart}>{model}</span>, {year}
@@ -15,10 +19,10 @@ export default function CatalogCard({ car }) {
         <p>${rentalPrice}</p>
       </div>
       <p className={styles.carInfo}>
-        {parseAddress(address)} | {rentalCompany} |<br />
-        {type} | {mileage}
+        {parseAddress(address, ' | ')} | {rentalCompany} |<br />
+        {type} | {parseMileage(mileage)}
       </p>
-      <Link to="/catalog/:id" className={styles.carInfoLink}>
+      <Link to={id} className={styles.carInfoLink}>
         Read more
       </Link>
     </li>

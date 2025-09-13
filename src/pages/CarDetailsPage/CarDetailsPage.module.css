@@ -1,0 +1,10 @@
+.contentWrapper {
+  display: flex;
+  gap: 72px;
+  align-items: flex-end;
+}
+
+.img {
+  margin-bottom: 40px;
+  border-radius: 19px;
+}

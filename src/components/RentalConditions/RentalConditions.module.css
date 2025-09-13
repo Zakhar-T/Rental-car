@@ -1,0 +1,20 @@
+.container {
+  margin-bottom: 110px;
+}
+
+.title {
+  margin-bottom: 20px;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 1.2;
+}
+
+.conditionWrapper {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.conditionWrapper:not(:last-child) {
+  margin-bottom: 16px;
+}

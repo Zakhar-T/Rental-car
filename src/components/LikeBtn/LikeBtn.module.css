@@ -1,0 +1,15 @@
+.likeBtn {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  line-height: 0;
+  background-color: transparent;
+}
+
+.icon {
+  fill: var(--white);
+}
+
+.iconLiked {
+  fill: var(--light-blue);
+}

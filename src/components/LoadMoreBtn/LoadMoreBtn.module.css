@@ -10,5 +10,5 @@
 
 .btn:hover,
 .btn:focus {
-  border: 1px solid var(--dark-blue);
+  border-color: var(--dark-blue);
 }

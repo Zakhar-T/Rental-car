@@ -1,11 +1,12 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { fetchBrands, fetchCars } from './operations';
+import { fetchCars } from './operations';
 
 const slice = createSlice({
   name: 'cars',
   initialState: {
     items: [],
-    brands: [],
+    page: 1,
+    totalPages: 1,
     isLoading: false,
     error: null,
   },
@@ -17,15 +18,13 @@ const slice = createSlice({
       .addCase(fetchCars.fulfilled, (state, action) => {
         state.isLoading = false;
         state.error = null;
-        state.items = action.payload;
-        console.log(state.items);
+        state.items = action.payload.cars;
+        state.page = Number(action.payload.page);
+        state.totalPages = Number(action.payload.totalPages);
       })
       .addCase(fetchCars.rejected, (state, action) => {
         state.isLoading = false;
         state.error = action.payload;
-      })
-      .addCase(fetchBrands.fulfilled, (state, action) => {
-        state.brands = action.payload;
       });
   },
 });
