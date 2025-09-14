@@ -1,13 +1,15 @@
 import clsx from 'clsx';
 import styles from './Header.module.css';
 
-import { Link, NavLink } from 'react-router-dom';
-
-const buildNavLinkClass = ({ isActive }) => {
-  return clsx(styles.navLink, isActive && styles.activeNavLink);
-};
+import { Link, NavLink, useLocation } from 'react-router-dom';
 
 export default function Header() {
+  const location = useLocation();
+
+  const buildNavLinkClass = ({ isActive }) => {
+    return clsx(styles.navLink, isActive && location.pathname === '/catalog' && styles.activeNavLink);
+  };
+
   return (
     <header className={styles.headerContainer}>
       <Link to="/" className={styles.logo} aria-label="Go to home">

@@ -10,7 +10,7 @@ export default function CatalogCard({ car }) {
 
   return (
     <li className={styles.card}>
-      <LikeBtn />
+      <LikeBtn id={id} />
       <img className={styles.cardImg} src={img} alt={brand} width="276" height="268" />
       <div className={styles.titleWrapper}>
         <h2 className={styles.title}>
