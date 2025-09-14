@@ -8,7 +8,7 @@ export default function LoadMoreBtn() {
   const page = useSelector(selectCarsPage);
 
   const handleClick = () => {
-    dispatch(fetchCars(page + 1));
+    dispatch(fetchCars({ page: page + 1 }));
   };
 
   return (

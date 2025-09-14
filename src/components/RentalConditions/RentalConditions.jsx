@@ -7,7 +7,7 @@ import { BsCheckCircle } from 'react-icons/bs';
 
 export default function RentalConditions() {
   const carDetails = useSelector(selectCarDetails);
-  const { rentalConditions } = carDetails;
+  const { rentalConditions = [] } = carDetails;
 
   return (
     <div className={styles.container}>

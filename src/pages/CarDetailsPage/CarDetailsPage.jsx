@@ -15,7 +15,7 @@ import BookingForm from '../../components/BookingForm/BookingForm';
 import Loading from '../../components/Loading/Loading';
 import Error from '../../components/Error/Error';
 
-export function CarDetailsPage() {
+export default function CarDetailsPage() {
   const params = useParams();
   const dispatch = useDispatch();
   const carDetails = useSelector(selectCarDetails);

@@ -10,7 +10,9 @@ const initialValues = {
 };
 
 export default function BookingForm() {
-  const handleSubmit = () => {};
+  const handleSubmit = (values, actions) => {
+    actions.resetForm();
+  };
 
   return (
     <Formik initialValues={initialValues} onSubmit={handleSubmit}>
@@ -20,7 +22,7 @@ export default function BookingForm() {
         <div className={styles.fieldWrapper}>
           <Field className={styles.field} type="text" name="name" placeholder="Name*" />
           <Field className={styles.field} type="email" name="email" placeholder="Email*" />
-          <Field className={styles.field} type="date" name="date" placeholder="Booking date" />
+          <Field className={styles.field} type="text" name="date" placeholder="Booking date" />
           <Field className={styles.field} as="textarea" name="comment" placeholder="Comment" />
         </div>
         <button className={styles.submitBtn} type="submit">

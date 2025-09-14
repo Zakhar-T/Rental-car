@@ -7,7 +7,7 @@ import { BsCheckCircle } from 'react-icons/bs';
 
 export default function Features() {
   const carDetails = useSelector(selectCarDetails);
-  const { accessories, functionalities } = carDetails;
+  const { accessories = [], functionalities = [] } = carDetails;
   const features = accessories.concat(functionalities);
 
   return (

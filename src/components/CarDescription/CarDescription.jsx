@@ -8,7 +8,7 @@ import { TfiLocationPin } from 'react-icons/tfi';
 
 export default function CarDescription() {
   const carDetails = useSelector(selectCarDetails);
-  const { brand, model, year, id, address, mileage, rentalPrice, description } = carDetails;
+  const { brand, model, year, id = '', address = '', mileage = '', rentalPrice, description } = carDetails;
 
   return (
     <div className={styles.container}>
