@@ -17,3 +17,8 @@ export function parseInputValue(value, text) {
 export function parseNumberFromSpaces(value) {
   return value.replace(/\s/g, '');
 }
+
+export function parseFeatured(json) {
+  const parsedFeatured = JSON.parse(json);
+  return JSON.parse(parsedFeatured.items);
+}

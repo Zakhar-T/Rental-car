@@ -6,7 +6,8 @@ import { BsHeart } from 'react-icons/bs';
 import { BsFillHeartFill } from 'react-icons/bs';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectFeatured } from '../../redux/featured/selectors';
-import { addToFeatured } from '../../redux/featured/slice';
+import { addToFeatured, removeFromFeatured } from '../../redux/featured/slice';
+import { parseFeatured } from '../../utils/parseFunctions';
 
 export default function LikeBtn({ id }) {
   const [isLiked, setIsLiked] = useState(false);
@@ -16,13 +17,12 @@ export default function LikeBtn({ id }) {
   useEffect(() => {
     const savedFeatured = localStorage.getItem('persist:featured');
     if (!savedFeatured) return;
-    const parsedSavedFeatured = JSON.parse(savedFeatured);
-    const savedFeaturedItems = JSON.parse(parsedSavedFeatured.items);
-    setIsLiked(savedFeaturedItems.includes(id));
+    const parsedFeatured = parseFeatured(savedFeatured);
+    setIsLiked(parsedFeatured.includes(id));
   }, [featured, id]);
 
   const handleClick = () => {
-    dispatch(addToFeatured(id));
+    isLiked ? dispatch(removeFromFeatured(id)) : dispatch(addToFeatured(id));
     isLiked ? setIsLiked(false) : setIsLiked(true);
   };
 

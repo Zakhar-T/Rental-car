@@ -9,9 +9,12 @@ const slice = createSlice({
     addToFeatured: (state, action) => {
       state.items.push(action.payload);
     },
+    removeFromFeatured: (state, action) => {
+      state.items.filter((item) => item !== action.payload);
+    },
   },
 });
 
-export const { addToFeatured } = slice.actions;
+export const { addToFeatured, removeFromFeatured } = slice.actions;
 
 export default slice.reducer;
